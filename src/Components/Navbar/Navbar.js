@@ -1,6 +1,5 @@
 'use client'
 import style from "@/Components/Navbar/Navbar.module.css";
-import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
@@ -14,8 +13,7 @@ export default function Navbar() {
 
   const handleNav = () => {
     setNav(!nav);
-    setShowMenu(false); // Menutup menu utama ketika menu hamburger diklik
-    
+    setShowMenu(false); 
   };
 
   useEffect(() => {
@@ -39,13 +37,6 @@ export default function Navbar() {
     setShowAboutMenu(false); // Menutup menu "Tentang" ketika menu hamburger diklik
   };
 
-  const closeMenu = () => {
-    setShowMenu(false);
-  };
-
-  const handleAboutClick = () => {
-    setShowAboutMenu(!showAboutMenu);
-  };
 
   return (
     <>
@@ -71,8 +62,8 @@ export default function Navbar() {
         <div
           className={
             nav
-              ? 'sm:hidden absolute top-0 left-[20%] right-0 bottom-0 flex justify-center items-center h-screen text-white  text-center ease-in duration-300'
-              : 'sm:hidden absolute top-0 left-[120%] right-0 bottom-0 flex justify-center items-center h-screen text-white  text-center ease-in duration-300'
+              ? 'sm:hidden absolute top-0 left-[20%] right-0 bottom-0 flex justify-center items-center h-screen text-white bg-black text-center ease-in duration-300'
+              : 'sm:hidden absolute top-0 left-[120%] right-0 bottom-0 flex justify-center items-center h-screen text-white bg-black text-center ease-in duration-300'
           }
         >
           <ul>
