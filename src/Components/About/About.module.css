@@ -11,8 +11,7 @@
    animation: typing 2s steps(22),cursor .4s step-end infinite alternate;
    color: white;
    text-align: center;
-  
-    box-sizing: border-box;
+   box-sizing: border-box;
 
 }
 
@@ -31,7 +30,6 @@
 }
 
 .container {
-    margin: 20vh;
     width: 80%;
     height: 100%;
     background: linear-gradient(109deg, rgba(217, 217, 217, 0.20) 0%, rgba(255, 255, 255, 0.02) 100%);
@@ -42,6 +40,7 @@
     backdrop-filter: blur(20px);
     padding: 75px;
     margin-left: 10vw;
+    margin-bottom: 20vh;
 }
 .item{
     max-width: 600px;
@@ -53,7 +52,7 @@
     padding-right: 5vh ;
     padding-bottom: 5vh ;
     color: #D9D9D9;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 550;
@@ -73,13 +72,13 @@
     overflow: hidden;
     background-color: none;
     background: none;
-    animation: bordure 2s cubic-bezier(.08,.3,.41,1.05) 1s forwards;
     border-radius: 50%;
+    animation: fotos 2s cubic-bezier(.08,.3,.41,1.05) 1s forwards;
     opacity: 0;
   
 }
 
-@keyframes bordure {
+@keyframes fotos {
     0%{
         width: 0px;
         height: 0px;
@@ -93,7 +92,7 @@
     }
     100%{
         width: 300px;
-        height: 300px;
+        height: 200px;
         opacity: 1;
     }
 }
@@ -113,14 +112,54 @@
         padding: 30px;
     }
     
+    .title {
+        font-size: 2rem;
+        padding: 2vh 3vw;
+        font-weight: 200;
+        text-align: center;
+    }
     .isi {
         font-size: 1rem;
         padding: 2vh 3vw;
         font-weight: 200;
+        text-align: justify;
     }
-    .logo{
-        display: grid;
-        
+    
+    .img{
+        display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: none;
+    background: none;
+    border-radius: 50%;
+    animation: fotos 2s cubic-bezier(.08,.3,.41,1.05) 1s forwards;
+    opacity: 0;
     }
+
+    @keyframes fotos {
+        0%{
+            width: 0px;
+            height: 0px;
+            opacity: 0;
+        }
+        20%{
+            opacity: 0.5;
+        }
+        50%{
+            height: 0%;
+        }
+        100%{
+            width: 200px;
+            height: 200px;
+            opacity: 1;
+        }
+    
 }
 
+}

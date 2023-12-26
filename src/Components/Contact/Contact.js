@@ -5,15 +5,15 @@ import Image from "next/image";
 const Contact = () => {
   return (
     <>
+    <section id="Contact">
       <div className={style.container}>
-        <div className={style.typing}>
-            
-          </div>
+      <h1 className={style.title}>Contact</h1>
         <div className={style.isi}>
-            aku sayang orel
+            Contact 
        
         </div>
       </div>
+    </section>
     </>
   );
 };
