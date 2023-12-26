@@ -15,6 +15,7 @@ export default function Navbar() {
   const handleNav = () => {
     setNav(!nav);
     setShowMenu(false);
+    setShowAboutMenu(false);
 };
 
   useEffect(() => {
@@ -38,6 +39,13 @@ export default function Navbar() {
     setShowAboutMenu(false); // Menutup menu "Tentang" ketika menu hamburger diklik
   };
 
+  const closeMenu = () => {
+    setShowMenu(false);
+  };
+
+  const handleAboutClick = () => {
+    setShowAboutMenu(!showAboutMenu);
+  };
 
   return (
     <>
@@ -59,34 +67,37 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* Mobile Menu */}
-        <div
+       
+         {/* Mobile Menu */}
+         <div
           className={
             nav
-            ? 'sm:hidden absolute top-0 left-[20%] right-0 bottom-0 flex justify-center items-center h-screen text-white text-center ease-in duration-300 '
-            : 'sm:hidden absolute top-0 left-[120%] right-0 bottom-0 flex justify-center items-center h-screen text-white text-center ease-in duration-300 blur-background'
+              ? 'sm:hidden absolute top-0 left-[20%] right-0 bottom-0 flex justify-center items-center h-screen text-white text-center ease-in duration-300 '
+             : 'sm:hidden absolute top-0 left-[120%] right-0 bottom-0 flex justify-center items-center h-screen text-white text-center ease-in duration-300 blur-background'
           }
         >
           <ul>
             {(!showAboutMenu || showMenu) && (
               <>
-                <li onClick={handleNav} className='p-4 text-2xl hover:text-white-500'>
+                <li onClick={handleNav} className='p-4 text-2xl hover:text-gray-500'>
                   <Link href="#">About</Link>
                 </li>
-                <li onClick={handleNav} className='p-4 text-2xl hover:text-white-500'>
+                <li onClick={handleNav} className='p-4 text-2xl hover:text-gray-500'>
                   <Link href="#Experiences">Experiences</Link>
                 </li>
-                <li onClick={handleNav} className='p-4 text-2xl hover:text-white-500'>
+                <li onClick={handleNav} className='p-4 text-2xl hover:text-gray-500'>
                   <Link href="#Skills">Skills</Link>
                 </li>
-                <li onClick={handleNav} className='p-4 text-2xl hover:text-white-500'>
+                <li onClick={handleNav} className='p-4 text-2xl hover:text-gray-500'>
                   <Link href="#Projects">Projects</Link>
                 </li>
-                <li onClick={handleNav} className='p-4 text-2xl hover:text-white-500'>
+                <li onClick={handleNav} className='p-4 text-2xl hover:text-gray-500'>
                   <Link href="#Contact">Contact</Link>
                 </li>
               </>
             )}
+           
+            
          
           </ul>
         </div>

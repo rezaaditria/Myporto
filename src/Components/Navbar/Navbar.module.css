@@ -42,7 +42,7 @@
   
   
   
-  @media screen and (max-width: 568px) {
+  @media screen and (max-width: 639px) {
     .container{
       justify-content: end;
       padding: 0 9vw;
