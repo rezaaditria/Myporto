@@ -40,7 +40,6 @@
     backdrop-filter: blur(20px);
     padding: 75px;
     margin-left: 10vw;
-    margin-bottom: 20vh;
 }
 .item{
     max-width: 600px;
@@ -106,6 +105,9 @@
         white-space: wrap;
         border:none;
         animation: none;
+        text-align: center;
+        align-items: center;
+        text-wrap: wrap;
     }
     .container {
         width: 75%;

@@ -1,107 +1,71 @@
 'use client'
-import style from "@/Components/Navbar/Navbar.module.css";
-import Link from "next/link";
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import React, { useState, useEffect } from 'react';
+import style from "@/Components/NavBar/Navbar.module.css"
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
-
-export default function Navbar() {
-  const [nav, setNav] = useState(false);
-  const [color, setColor] = useState('transparent');
-  const [textColor, setTextColor] = useState('white');
-  const [showMenu, setShowMenu] = useState(false);
-  const [showAboutMenu, setShowAboutMenu] = useState(false);
-
-  const handleNav = () => {
-    setNav(!nav);
-    setShowMenu(false);
-    setShowAboutMenu(false);
-};
-
-  useEffect(() => {
-    const changeColor = () => {
-      if (window.scrollY >= 90) {
-        setColor('#ffffff');
-        setTextColor('#000000');
-      } else {
-        setColor('transparent');
-        setTextColor('#ffffff');
-      }
-    };
-    window.addEventListener('scroll', changeColor);
-    return () => {
-        window.removeEventListener('scroll', changeColor);
-      };
-  }, []);
-
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-    setShowAboutMenu(false); // Menutup menu "Tentang" ketika menu hamburger diklik
-  };
-
-  const closeMenu = () => {
-    setShowMenu(false);
-  };
-
-  const handleAboutClick = () => {
-    setShowAboutMenu(!showAboutMenu);
-  };
-
+function NavBar() {
+  const [navbar, setNavbar] = useState(false);
   return (
-    <>
-      <div className={`${style.container} ${showMenu ? style.responsive : ''}`}>
-    
-        <div className={style.list}>
-          <a className={style.active}><Link href="#">About</Link></a>
-          <a><Link href="#Experiences">Experiences</Link></a>
-          <a> <Link href="#Skills">Skills</Link></a>
-          <a><Link href="#Projects">Projects</Link></a>
-          <a><Link href="#Contact">Contact</Link></a>
+    <div>
+      <nav className="w-full h-300 bg-cyan fixed top-0 left-0 right-0 z-10 backdrop-blur-md ">
+        <div className="justify-center px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+          <div>
+            <div className="flex items-center justify-end py-3 md:py-5 md:block">
+              {/* HAMBURGER BUTTON FOR MOBILE */}
+              <div className="md:hidden">
+                <button
+                  className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border "
+                  onClick={() => setNavbar(!navbar)}
+                >
+                  {navbar ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+                navbar ? 'p-12 md:p-0 block' : 'hidden'
+              }`}
+            >
+              <ul className="h-screen md:h-auto items-center justify-center md:flex ">
+                <li className="pb-6 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-cyan-900  border-white-900  md:hover:text-cyan-600 md:hover:bg-transparent">
+                  <Link href="#about" onClick={() => setNavbar(!navbar)}>
+                    About
+                  </Link>
+                </li>
+                <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-cyan-600  border-white-900  md:hover:text-cyan-600 md:hover:bg-transparent">
+                  <Link href="#Experiences" onClick={() => setNavbar(!navbar)}>
+                  Experiences
+                  </Link>
+                </li>
+                <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-cyan-600  border-white-900  md:hover:text-cyan-600 md:hover:bg-transparent">
+                  <Link href="#Skills" onClick={() => setNavbar(!navbar)}>
+                    Skills
+                  </Link>
+                </li>
+                <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-cyan-600  border-white-900  md:hover:text-cyan-600 md:hover:bg-transparent">
+                  <Link href="#Projects" onClick={() => setNavbar(!navbar)}>
+                    Projects
+                  </Link>
+                </li>
+                <li className="pb-6 text-xl text-white py-2 px-6 text-center   md:border-b-0  hover:bg-cyan-600  border-white-900  md:hover:text-cyan-600 md:hover:bg-transparent">
+                  <Link href="#Contact" onClick={() => setNavbar(!navbar)}>
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-
-        <div onClick={handleNav} className='block sm:hidden z-10'>
-          {nav ? (
-            <AiOutlineClose size={20} style={{ color: `${textColor}` }} />
-          ) : (
-            <AiOutlineMenu size={20} style={{ color: `${textColor}` }} />
-          )}
-        </div>
-
-       
-         {/* Mobile Menu */}
-         <div
-          className={
-            nav
-              ? 'sm:hidden absolute top-0 left-[20%] right-0 bottom-0 flex justify-center items-center h-screen text-white text-center ease-in duration-300 '
-             : 'sm:hidden absolute top-0 left-[120%] right-0 bottom-0 flex justify-center items-center h-screen text-white text-center ease-in duration-300 blur-background'
-          }
-        >
-          <ul>
-            {(!showAboutMenu || showMenu) && (
-              <>
-                <li onClick={handleNav} className='p-4 text-2xl hover:text-gray-500'>
-                  <Link href="#">About</Link>
-                </li>
-                <li onClick={handleNav} className='p-4 text-2xl hover:text-gray-500'>
-                  <Link href="#Experiences">Experiences</Link>
-                </li>
-                <li onClick={handleNav} className='p-4 text-2xl hover:text-gray-500'>
-                  <Link href="#Skills">Skills</Link>
-                </li>
-                <li onClick={handleNav} className='p-4 text-2xl hover:text-gray-500'>
-                  <Link href="#Projects">Projects</Link>
-                </li>
-                <li onClick={handleNav} className='p-4 text-2xl hover:text-gray-500'>
-                  <Link href="#Contact">Contact</Link>
-                </li>
-              </>
-            )}
-           
-            
-         
-          </ul>
-        </div>
-      </div>
-    </>
+      </nav>
+    </div>
   );
 }
+
+export default NavBar;
