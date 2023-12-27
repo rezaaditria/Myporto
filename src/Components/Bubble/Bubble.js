@@ -1,10 +1,11 @@
 import React from "react";
+import style from "@/Components/Bubble/Bubble.module.css"
 
 
 const Bubble = () => {
   return (
 
-<div className="gradient-bg">
+<div className={style.gradientbg}>
   <svg xmlns="http://www.w3.org/2000/svg">
     <defs>
       <filter id="goo">
@@ -19,13 +20,13 @@ const Bubble = () => {
       </filter>
     </defs>
   </svg>
-  <div className="gradients-container">
-    <div className="g1" />
-    <div className="g2" />
-    <div className="g3" />
-    <div className="g4" />
-    <div className="g5" />
-    <div className="interactive" />
+  <div className={style.gradientscontainer}>
+    <div className={style.g1} />
+    <div className={style.g2} />
+    <div className={style.g3} />
+    <div className={style.g4} />
+    <div className={style.g5} />
+    <div className={style.interactive} />
   </div>
 </div>
 
