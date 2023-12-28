@@ -3,11 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
-function NavBar() {
+function Navbar() {
   const [navbar, setNavbar] = useState(false);
   return (
     <div>
-      <nav className="w-full bg-cyan fixed top-0 left-0 right-0 z-10 backdrop-blur-md" style={{ backdropFilter: 'blur(10px)', boxSizing: 'border-box', borderBottom: '1px solid', borderImage: 'linear-gradient(to right, #D9D9D900, #ffffff, #D9D9D900)', borderImageSlice: 1 }}>
+      <nav className="w-full bg-cyan fixed top-0 left-0 right-0 z-10 backdrop-blur-md" style={{ backdropFilter: 'blur(10px)', boxSizing: 'border-box', borderBottom: '1px solid', borderImage: 'linear-gradient(to right, #ffffff, #D9D9D900,#ffffff )', borderImageSlice: 1 }}>
         <div className="justify-center px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-end py-3 md:py-5 md:block">
@@ -67,4 +67,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Navbar;
