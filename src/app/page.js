@@ -1,10 +1,9 @@
 
-import About from "@/Components/About/About";
-import Experiences from "@/Components/Experiences/Experiences";
-import Skills from "@/Components/Skills/Skills";
-import Projek from "@/Components/Projek/Projek";
-import Contact from "@/Components/Contact/Contact";
-import Navbar from "@/Components/Navbar/Navbar";
+import About from "@/components/About/About";
+import Experiences from "@/components/Experiences/Experiences";
+import Skills from "@/components/Skills/Skills";
+import Projek from "@/components/Projek/Projek";
+import Contact from "@/components/Contact/Contact";
 
 export default function Home() {
   return (

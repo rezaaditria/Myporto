@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/Components/Navbar/Navbar'
-import Bubble from '@/Components/Bubble/Bubble'
+import Navbar from '@/components/Navbar/navigasi'
+import Bubble from '@/components/Bubble/Bubble'
 import React from "react";
 
 const inter = Inter({ subsets: ['latin'] })
