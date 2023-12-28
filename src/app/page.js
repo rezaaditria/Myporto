@@ -1,4 +1,3 @@
-
 import About from "@/components/About/About";
 import Experiences from "@/components/Experiences/Experiences";
 import Skills from "@/components/Skills/Skills";
